@@ -1,5 +1,5 @@
 class User < ApplicationRecord
   has_many :questions
 
-  validates :username
+  validates :username, :password, presence: true
 end
