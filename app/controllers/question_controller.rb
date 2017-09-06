@@ -1,5 +1,6 @@
 class QuestionController < ApplicationController
   def index
+    @questions = Question.page(1).per(10)
   end
 
   def new
