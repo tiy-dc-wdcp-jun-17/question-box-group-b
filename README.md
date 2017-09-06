@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README will cover the Daily project Question Box for Group B or Group LET. "AKA THE BEST TEAM" The Question Box will be a clone similar to StackOverflow build from basic Ruby on Rails. 
 
 Things you may want to cover:
 
