@@ -1,7 +1,6 @@
 # README
 
-This README will cover the Daily project Question Box for Group B or Group LET. "AKA THE BEST TEAM" The Question Box will be a clone similar to StackOverflow build from basic Ruby on Rails. 
-
+This README will cover the Daily project Question Box for Group B or Group LET. "AKA THE BEST TEAM". It's not wildly informative.
 Things you may want to cover:
 
 * Ruby version
