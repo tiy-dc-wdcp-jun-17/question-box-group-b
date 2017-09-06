@@ -28,4 +28,10 @@ class UserController < ApplicationController
     #code
   end
 
+  private
+
+  def set_question
+    @question = Question.find(params[:id])
+  end
+
 end
