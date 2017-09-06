@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README is for the activity 'Question Box'. It's not wildly informative.
 
 Things you may want to cover:
 
