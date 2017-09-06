@@ -1,0 +1,21 @@
+<p id="notice"> <%= notice %> </p>
+
+<h1>Questions</h1>
+<%= link_to 'New Question', new_question_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @questions.each do |question| %>
+    <tr>
+      <td><%= question.title %></td>
+      <td><%= question.body %></td>
+      <td><%= link_to 'Show', question %></td>
+    </tr>
+  </tbody>
+</table>
