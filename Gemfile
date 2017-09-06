@@ -39,6 +39,8 @@ group :development, :test do
   gem "selenium-webdriver"
   gem 'pry-rails'
   gem 'redcarpet', '~> 3.0.0'
+  gem 'bootstrap-sass', '~> 3.3.6'
+  # gem 'sass-rails', '>= 3.2'
 end
 
 group :development do
