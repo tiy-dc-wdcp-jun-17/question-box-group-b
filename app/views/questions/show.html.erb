@@ -1,10 +1,17 @@
 <p id="notice"> <%= notice %> </p>
 
+<h1><%= @question.title %></h1>
+
 <p>
-  <strong>Title</strong>
-  <%= @question.title %>
+  <%= @question.body %>
 </p>
 
-<p><%= @question.body %></p>
+<%= link_to 'Add Answer', new_question_answer_path(@question) %>
+
+<% @question.answers.each do |answer| %>
+  <tr>
+    <td><%= answer.body %></td>
+  </tr>
+<% end %>
 
 <%= link_to 'Questions', questions_path %>

@@ -1,14 +1,15 @@
 class AnswersController < ApplicationController
   def new
+    @question = Question.find(params[:question_id])
     @answer = Answer.new
   end
 
   def create
-    @answer = Answer.new(answer_params)
+    @answer = Answer.new(@question)
     respond_to do |format|
       if @answer.save
         # this may not be correct, but we want to redirect to the question view that that answer is responding to.
-        format.html { redirect_to @question }
+        format.html { redirect_to questions_url }
         format.json { render :show, status: :created, title: @answer }
       else
         format.html { render :new }

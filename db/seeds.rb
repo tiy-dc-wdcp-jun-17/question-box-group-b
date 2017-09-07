@@ -6,8 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!(username: "Erll", email: "eatbrains@undead.com", password: "password")
+user = User.create!(username: "Erll", email: "eatbrains@undead.com", password_digest: "password")
 
 30.times do
-  question = Question.create!(title: Faker::ChuckNorris.fact, body: Faker::Markdown.random)
+  question = Question.create!(
+    title: Faker::ChuckNorris.fact,
+    body: Faker::Markdown.random,
+    user: user
+  )
 end
