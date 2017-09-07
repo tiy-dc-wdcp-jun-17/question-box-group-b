@@ -39,8 +39,7 @@ group :development, :test do
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
   gem 'pry-rails'
-  gem 'bootstrap-sass', '~> 3.3.6'
-  # gem 'sass-rails', '>= 3.2'
+  gem 'bootstrap', '~> 4.0.0.beta'
   gem 'redcarpet'
   gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 end
