@@ -1,5 +1,18 @@
 class UsersController < ApplicationController
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to questions_path
+    end
+  end
+
   def index
     #code
   end
@@ -16,13 +29,6 @@ class UsersController < ApplicationController
     #code
   end
 
-  def new
-    #code
-  end
-
-  def create
-    #code
-  end
 
   def update
     #code
@@ -30,8 +36,8 @@ class UsersController < ApplicationController
 
   private
 
-  def set_question
-    @question = Question.find(params[:id])
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 
 end
