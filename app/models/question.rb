@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
-  # has_many :answers
-  # belongs_to :user
+  has_many :answers
+  belongs_to :user
 
   def markdown
     md = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
