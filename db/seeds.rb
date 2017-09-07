@@ -7,3 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create!(username: "Erll", email: "eatbrains@undead.com", password: "password")
+
+30.times do
+  question = Question.create!(title: Faker::ChuckNorris.fact, body: Faker::Markdown.random)
+end
