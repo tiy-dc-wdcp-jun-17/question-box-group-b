@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  root to: 'questions#index'
-  resources :users
+  root to: 'sessions#new'
+  
   resources :questions
   resources :answers
+
+  resource :users, only: [:new, :create]
+  resource :session, only: [:new, :create, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
