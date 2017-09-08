@@ -1,14 +1,15 @@
 <h1>Login</h1>
-
-<% if current_user %>
+<body class="login">
+  <% if current_user %>
   You are now logged in as: <%= current_user.email %>.
   <%= link_to "Log Out", session_path, method: :delete %>
-<% else %>
+  <% else %>
   You are not logged in. Sign up here!! <%= link_to "Sign Up", new_users_path %>.
-<% end %>
+  <% end %>
 
-<%= form_tag session_path do %>
+  <%= form_tag session_path do %>
   Email: <%= text_field_tag :email %>
   Password: <%= password_field_tag :password %>
   <%= submit_tag "Submit" %>
-<% end %>
+  <% end %>
+</body>
