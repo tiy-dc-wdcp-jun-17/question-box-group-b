@@ -1,17 +1,19 @@
 <p id="notice"> <%= notice %> </p>
 
-<h1><%= @question.title %></h1>
+<body class="question_show">
+  <h1><%= @question.title %></h1>
 
-<p>
-  <%= @question.body %>
-</p>
+  <p>
+    <%= @question.body %>
+  </p>
 
-<%= link_to 'Add Answer', new_question_answer_path(@question) %>
+  <%= link_to 'Add Answer', new_question_answer_path(@question) %>
 
-<% @question.answers.each do |answer| %>
+  <% @question.answers.each do |answer| %>
   <tr>
     <td><%= answer.body %></td>
   </tr>
-<% end %>
+  <% end %>
 
-<%= link_to 'Questions', questions_path %>
+  <%= link_to 'Questions', questions_path %>
+</body>

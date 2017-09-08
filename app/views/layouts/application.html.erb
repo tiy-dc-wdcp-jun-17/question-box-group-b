@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar_header">
+              <span><%= link_to "LOGIN", new_session_path%></span>
+              <span><%= link_to "SIGN UP", new_users_path %></span>
+              <span><%= link_to "QUESTIONS", questions_path %></span>
+          </div>
+        </div>
+    </header>
+
     <%= yield %>
   </body>
 </html>
