@@ -5,7 +5,10 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = Answer.new(@question)
+    @question = Question.find(params[:question_id])
+    @answer = Answer.new(answer_params)
+    @answer.question = @question
+
     respond_to do |format|
       if @answer.save
         # this may not be correct, but we want to redirect to the question view that that answer is responding to.
@@ -40,6 +43,12 @@ class AnswersController < ApplicationController
       format.html { redirect_to questions_url, notice: 'Answer was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def answer_params
+    params.require(:answer).permit(:body)
   end
 
 end
