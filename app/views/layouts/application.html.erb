@@ -18,6 +18,17 @@
               <span><%= link_to "QUESTIONS", questions_path %></span>
           </div>
         </div>
+        <div class="container">
+          <div class="navbar_header">
+            <span><%= link_to "LOGIN", new_session_path %>m</span>
+            <span><%= link_to "SIGN UP", new_users_path %>m</span>
+            <span><%= link_to "QUESTIONS", questions_path %>m</span>
+          <form class="navbar-form" action="/results" method="get">
+            <input type="text" name=q id="search" placeholder="Search Questions">
+            <button class="btn btn-default" type="submit">BOOM</button>
+          </form>
+          </div>
+        </div>
     </header>
 
     <%= yield %>
