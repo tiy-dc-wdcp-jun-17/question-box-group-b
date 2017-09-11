@@ -3,16 +3,20 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body</th>
     </tr>
   </thead>
   <tbody>
     <% @pg_search_documents.find_each do |document| %>
       <tr>
-        <td><%= document.searchable.title %></td>
-        <td><%= document.searchable.body %></td>
-        <td><%= link_to 'Show', document.searchable, class: "btn btn-primary"%></td>
+        <% if document.searchable.class == Answer %>
+          <td><%= document.searchable.body %></td>
+          <td><%= link_to 'Show', document.searchable.question, class: "btn btn-secondary"%></td>
+        <% else %>
+          <td><%= document.searchable.title %></td>
+          <td><%= document.searchable.body %></td>
+          <td><%= link_to 'Show', document.searchable, class: "btn btn-primary"%></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
