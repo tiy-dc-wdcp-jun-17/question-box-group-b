@@ -1,4 +1,6 @@
 class Question < ApplicationRecord
+  include PgSearch
+
   has_many :answers
   belongs_to :user
 
@@ -9,4 +11,7 @@ class Question < ApplicationRecord
       disable_indented_code_blocks: true)
     md.render(self.body).html_safe
   end
+
+  multisearchable against: %i(title, body)
+  
 end
