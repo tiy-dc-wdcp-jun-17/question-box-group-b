@@ -7,11 +7,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @pg_search_documents.each do |pg_search_document| %>
+    <% @pg_search_documents.find_each do |document| %>
       <tr>
-        <td><%= pg_search_document.title %></td>
-        <td><%= pg_search_document.body %></td>
-        <td><%= link_to 'Show', pg_search_document.searchable.title, class: "btn btn-primary"%></td>
+        <td><%= document.searchable.title %></td>
+        <td><%= document.searchable.body %></td>
+        <td><%= link_to 'Show', class: "btn btn-primary"%></td>
       </tr>
     <% end %>
   </tbody>
