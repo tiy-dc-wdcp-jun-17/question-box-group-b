@@ -12,5 +12,5 @@ class Question < ApplicationRecord
     md.render(self.body).html_safe
   end
 
-  multisearchable against %i(title body)
+  multisearchable against: %i(title body)
 end
