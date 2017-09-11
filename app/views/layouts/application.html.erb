@@ -16,6 +16,10 @@
               <span><%= link_to "LOGIN", new_session_path%></span>
               <span><%= link_to "SIGN UP", new_users_path %></span>
               <span><%= link_to "QUESTIONS", questions_path %></span>
+            <form class="navbar-form" action="/results/index" method="get">
+              <input type="text" name="q" id="search" placeholder="Seraching for...">
+              <button class="btn btn-default" type="submit" name="button">SEARCH</button>
+            </form>
           </div>
         </div>
     </header>

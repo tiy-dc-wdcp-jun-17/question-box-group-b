@@ -1,25 +1,27 @@
 <!-- <p id="notice"> <%= notice %> </p> -->
-
-<h1>Questions</h1>
-<%= link_to 'New Question', new_question_path %>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @questions.each do |question| %>
+<body class="container">
+  <h1>Questions</h1>
+  <%= link_to 'New Question', new_question_path, class: "btn btn-primary" %>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @questions.each do |question| %>
       <tr>
         <td><%= question.title %></td>
         <td><%= question.body %></td>
-        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Show', question, class: "btn btn-primary" %></td>
         <td><%= link_to 'Delete', question, method: :delete, data: { confirm: "Are you sure?"} %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= paginate @questions %>
-<%= page_entries_info @questions %>
+  <%= paginate @questions %>
+  <%= page_entries_info @questions %>
+
+</body>
