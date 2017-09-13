@@ -11,13 +11,17 @@
   <body>
     <header>
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar_header">
-              <span><%= link_to "LOGIN", new_session_path%></span>
-              <span><%= link_to "SIGN UP", new_users_path %></span>
-              <span><%= link_to "QUESTIONS", questions_path %></span>
-          </div>
+      <div class="container">
+        <div class="navbar_header">
+            <span><%= link_to "LOGIN", new_session_path%></span>
+            <span><%= link_to "SIGN UP", new_users_path %></span>
+            <span><%= link_to "QUESTIONS", questions_path %></span>
+          <form class="navbar-form" action="/results" method="get">
+            <input type=”text” name=q id=”search” placeholder="Search Questions">
+            <button class="btn btn-default" type="submit">Go</button>
+          </form>
         </div>
+      </div>
     </header>
 
     <%= yield %>

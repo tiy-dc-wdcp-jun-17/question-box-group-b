@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
     respond_to do |format|
       if @answer.save
         # this may not be correct, but we want to redirect to the question view that that answer is responding to.
-        format.html { redirect_to questions_url }
+        format.html { redirect_to question_url(@question) }
         format.json { render :show, status: :created, title: @answer }
       else
         format.html { render :new }
